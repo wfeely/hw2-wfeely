@@ -8,9 +8,10 @@ import org.apache.uima.jcas.JCas;
 import edu.cmu.deiis.types.*;
 
 /**
- * Annotator that detects tokens using Java 1.4 regular expressions.
+ * Annotator that identifies tokens using Java 1.4 regular expressions.
  */
 public class TokenAnnotator extends JCasAnnotator_ImplBase {
+  // token regex; matches alphanumeric strings
   private Pattern tokenPattern =
            Pattern.compile("[A-Za-z0-9]+");
   public void process (JCas aJCas) {
@@ -20,10 +21,11 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
     Matcher matcher = tokenPattern.matcher(text);
     int pos = 0;
     while (matcher.find(pos)) {
-      // found one - create annotation
+      // found a token; create annotation
       Token token = new Token(aJCas);
       token.setBegin(matcher.start());
       token.setEnd(matcher.end());
+      // add token to indexes and iterate
       token.addToIndexes();
       pos = matcher.end();
     }

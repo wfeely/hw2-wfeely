@@ -11,8 +11,10 @@ import edu.cmu.deiis.types.*;
  * Annotator that identifies answers using Java 1.4 regular expressions.
  */
 public class AnswerAnnotator extends JCasAnnotator_ImplBase {
+  // answer regex; matches answer strings
   private Pattern answerPattern =
            Pattern.compile("A [01] [A-Za-z ]+");
+  // key regex; matches boolean answer key in answer string
   private Pattern keyPattern =
            Pattern.compile("A ([01])");
   public void process (JCas aJCas) {
