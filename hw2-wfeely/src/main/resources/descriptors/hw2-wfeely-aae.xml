@@ -27,6 +27,12 @@
     <delegateAnalysisEngine key="TokenAnnotator">
       <import name="descriptors.TokenAnnotator"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="QuestionAnnotator">
+      <import name="descriptors.QuestionAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="AnswerAnnotator">
+      <import name="descriptors.AnswerAnnotator"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-wfeely-aae.xml</name>
@@ -38,6 +44,8 @@
     <flowConstraints>
       <fixedFlow>
         <node>TokenAnnotator</node>
+      <node>QuestionAnnotator</node>
+        <node>AnswerAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>
@@ -45,8 +53,7 @@
     <capabilities>
       <capability>
         <inputs/>
-        <outputs>
-          </outputs>
+        <outputs/>
         <languagesSupported>
           <language>en</language>
         </languagesSupported>
@@ -54,7 +61,9 @@
       <capability>
         <inputs/>
         <outputs>
-          <type>edu.cmu.deiis.types.Token</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
         </outputs>
         <languagesSupported>
           <language>x-unspecified</language>
