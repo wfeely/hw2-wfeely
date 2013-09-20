@@ -17,17 +17,32 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
   public void process (JCas aJCas) {
     // get document text
     String text = aJCas.getDocumentText();
-    // search for tokens
-    Matcher matcher = tokenPattern.matcher(text);
-    int pos = 0;
-    while (matcher.find(pos)) {
-      // found a token; create annotation
-      Token token = new Token(aJCas);
-      token.setBegin(matcher.start());
-      token.setEnd(matcher.end());
-      // add token to indexes and iterate
-      token.addToIndexes();
-      pos = matcher.end();
+    String [] sentences = text.split("\\n");
+    int docpos = 0;
+    for (String sentence : sentences){
+      // skip Q/A and 0/1 in beginning of sentence
+      String sentenceText;
+      if (sentence.substring(0, 1).equals("Q")){
+        sentenceText = sentence.substring(2);
+        docpos += 2;
+      }
+      else {
+        sentenceText = sentence.substring(4);
+        docpos += 4;
+      }
+      // search for tokens in each sentence
+      int spos = 0;
+      Matcher matcher = tokenPattern.matcher(sentenceText);
+      while (matcher.find(spos)) {
+        // found a token; create annotation
+        Token token = new Token(aJCas);
+        token.setBegin(docpos + matcher.start());
+        token.setEnd(docpos + matcher.end());
+        // add token to indexes and iterate
+        token.addToIndexes();
+        spos = matcher.end();
+      }
+      docpos += sentenceText.length() + 1;
     }
   }
 }
