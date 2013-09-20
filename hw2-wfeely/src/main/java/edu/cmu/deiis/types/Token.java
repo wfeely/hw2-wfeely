@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Fri Sep 20 11:34:39 EDT 2013
+ * Updated by JCasGen Fri Sep 20 12:15:25 EDT 2013
  * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/hw2-wfeely-aae.xml
  * @generated */
 public class Token extends Annotation {
