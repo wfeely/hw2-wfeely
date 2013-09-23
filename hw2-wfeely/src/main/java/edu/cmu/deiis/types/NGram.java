@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Sun Sep 22 22:57:52 EDT 2013
- * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/hw2-wfeely-aae.xml
+ * Updated by JCasGen Sun Sep 22 23:05:29 EDT 2013
+ * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated
@@ -112,6 +112,24 @@ public class NGram extends Annotation {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_elementType == null)
       jcasType.jcas.throwFeatMissing("elementType", "edu.cmu.deiis.types.NGram");
     jcasType.ll_cas.ll_setStringValue(addr, ((NGram_Type)jcasType).casFeatCode_elementType, v);}    
+   
+    
+  //*--------------*
+  //* Feature: sentenceId
+
+  /** getter for sentenceId - gets Integer sentence ID for this ngram.
+   * @generated */
+  public int getSentenceId() {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_sentenceId == null)
+      jcasType.jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.NGram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((NGram_Type)jcasType).casFeatCode_sentenceId);}
+    
+  /** setter for sentenceId - sets Integer sentence ID for this ngram. 
+   * @generated */
+  public void setSentenceId(int v) {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_sentenceId == null)
+      jcasType.jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.NGram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((NGram_Type)jcasType).casFeatCode_sentenceId, v);}    
   }
 
     

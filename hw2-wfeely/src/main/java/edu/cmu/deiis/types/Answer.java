@@ -9,9 +9,12 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 
+import org.apache.uima.jcas.cas.FSList;
+
+
 /** 
- * Updated by JCasGen Sun Sep 22 22:57:52 EDT 2013
- * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/hw2-wfeely-aae.xml
+ * Updated by JCasGen Sun Sep 22 23:05:29 EDT 2013
+ * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Answer extends Annotation {
   /** @generated
@@ -77,6 +80,24 @@ public class Answer extends Annotation {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_isCorrect == null)
       jcasType.jcas.throwFeatMissing("isCorrect", "edu.cmu.deiis.types.Answer");
     jcasType.ll_cas.ll_setBooleanValue(addr, ((Answer_Type)jcasType).casFeatCode_isCorrect, v);}    
+   
+    
+  //*--------------*
+  //* Feature: ngrams
+
+  /** getter for ngrams - gets List of ngrams for this answer.
+   * @generated */
+  public FSList getNgrams() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_ngrams == null)
+      jcasType.jcas.throwFeatMissing("ngrams", "edu.cmu.deiis.types.Answer");
+    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_ngrams)));}
+    
+  /** setter for ngrams - sets List of ngrams for this answer. 
+   * @generated */
+  public void setNgrams(FSList v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_ngrams == null)
+      jcasType.jcas.throwFeatMissing("ngrams", "edu.cmu.deiis.types.Answer");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_ngrams, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

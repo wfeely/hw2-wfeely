@@ -30,7 +30,7 @@
     <features>
         <featureDescription>
           <name>sentenceId</name>
-          <description/>
+          <description>Integer sentence ID for this token.</description>
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
       </features>
@@ -51,6 +51,11 @@
           <description/>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>sentenceId</name>
+          <description>Integer sentence ID for this ngram.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
@@ -63,12 +68,26 @@
           <description/>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>ngrams</name>
+          <description>List of ngrams for this answer.</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.NGram</elementType>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
       <name>edu.cmu.deiis.types.Question</name>
       <description/>
       <supertypeName>edu.cmu.deiis.types.Annotation</supertypeName>
+    <features>
+        <featureDescription>
+          <name>ngrams</name>
+          <description>List of ngrams for this question.</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.NGram</elementType>
+        </featureDescription>
+      </features>
     </typeDescription>
     <typeDescription>
       <name>edu.cmu.deiis.types.AnswerScore</name>

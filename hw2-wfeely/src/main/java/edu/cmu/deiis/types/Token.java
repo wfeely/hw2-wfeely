@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Sun Sep 22 22:57:52 EDT 2013
- * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/hw2-wfeely-aae.xml
+ * Updated by JCasGen Sun Sep 22 23:05:29 EDT 2013
+ * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -62,14 +62,14 @@ public class Token extends Annotation {
   //*--------------*
   //* Feature: sentenceId
 
-  /** getter for sentenceId - gets 
+  /** getter for sentenceId - gets Integer sentence ID for this token.
    * @generated */
   public int getSentenceId() {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_sentenceId == null)
       jcasType.jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.Token");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_sentenceId);}
     
-  /** setter for sentenceId - sets  
+  /** setter for sentenceId - sets Integer sentence ID for this token. 
    * @generated */
   public void setSentenceId(int v) {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_sentenceId == null)
