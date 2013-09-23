@@ -27,14 +27,14 @@
     <delegateAnalysisEngine key="TokenAnnotator">
       <import name="descriptors.TokenAnnotator"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="QuestionAnnotator">
-      <import name="descriptors.QuestionAnnotator"/>
+  <delegateAnalysisEngine key="NgramAnnotator">
+      <import name="descriptors.NgramAnnotator"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="AnswerAnnotator">
       <import name="descriptors.AnswerAnnotator"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="NgramAnnotator">
-      <import name="descriptors.NgramAnnotator"/>
+  <delegateAnalysisEngine key="QuestionAnnotator">
+      <import name="descriptors.QuestionAnnotator"/>
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="AnswerScoreAnnotator">
       <import name="descriptors.AnswerScoreAnnotator"/>

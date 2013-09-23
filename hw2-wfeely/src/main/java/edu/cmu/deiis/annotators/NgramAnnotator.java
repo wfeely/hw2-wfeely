@@ -27,9 +27,17 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
     Iterator tokenIter = tokenIndex.iterator();
     Token penult = null;
     Token antepenult = null;
+    int sentenceNum = 0;
     while (tokenIter.hasNext()) {
       // grab a token
       Token token = (Token) tokenIter.next();
+      // check if we're on a new sentence
+      if (sentenceNum != token.getSentenceId()) {
+        // new sentence, update sentenceNum counter and reset previous token buffers
+        sentenceNum = token.getSentenceId();
+        penult = null;
+        antepenult = null;
+      }
       // check previous tokens
       if (penult == null && antepenult == null) {
         // Case 1: Previous two tokens are not set

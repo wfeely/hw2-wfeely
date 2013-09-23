@@ -17,7 +17,7 @@ import edu.cmu.deiis.types.*;
 public class TokenAnnotator extends JCasAnnotator_ImplBase {
   // token regex; matches alphanumeric strings
   private Pattern tokenPattern =
-           Pattern.compile("[A-Za-z0-9]+");
+           Pattern.compile("[A-Za-z0-9']+");
   public void process (JCas aJCas) {
     // get document text
     String text = aJCas.getDocumentText();
