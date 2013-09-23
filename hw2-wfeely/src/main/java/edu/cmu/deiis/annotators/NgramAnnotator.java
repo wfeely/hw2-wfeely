@@ -39,49 +39,59 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
       else if (antepenult == null)
       {
         // Case 2: Penultimate token is set, antepenultimate token is not set
-        // make a bigram
-        NGram bigram = new NGram(aJCas);
-        bigram.setElementType("Bigram");
-        bigram.setElements(new FSArray(aJCas, 2));
-        // add tokens to bigram
-        bigram.setElements(0,penult);
-        bigram.setElements(1,token);
-        // set bigram begin and end
-        bigram.setBegin(penult.getBegin());
-        bigram.setEnd(token.getEnd());
-        // add bigram to indexes
-        bigram.addToIndexes();
-        // set previous two tokens
-        antepenult = penult;
-        penult = token;
+        // check whether previous two tokens are from same sentence
+        if (penult.getSentenceId() == token.getSentenceId())
+        {
+          // make a bigram
+          NGram bigram = new NGram(aJCas);
+          bigram.setElementType("Bigram");
+          bigram.setElements(new FSArray(aJCas, 2));
+          // add tokens to bigram
+          bigram.setElements(0,penult);
+          bigram.setElements(1,token);
+          // set bigram begin and end
+          bigram.setBegin(penult.getBegin());
+          bigram.setEnd(token.getEnd());
+          // add bigram to indexes
+          bigram.addToIndexes();
+        }
       }
       else {
         // Case 3: Previous two tokens are set
-        // make a bigram
-        NGram bigram = new NGram(aJCas);
-        bigram.setElementType("Bigram");
-        bigram.setElements(new FSArray(aJCas, 2));
-        // add tokens to bigram
-        bigram.setElements(0,penult);
-        bigram.setElements(1,token);
-        // set bigram begin and end
-        bigram.setBegin(penult.getBegin());
-        bigram.setEnd(token.getEnd());
-        // add bigram to indexes
-        bigram.addToIndexes();
-        // make a trigram
-        NGram trigram = new NGram(aJCas);
-        trigram.setElementType("Trigram");
-        trigram.setElements(new FSArray(aJCas, 3));
-        // add tokens to trigram
-        trigram.setElements(0,antepenult);
-        trigram.setElements(1,penult);
-        trigram.setElements(2,token);
-        // set trigram begin and end
-        trigram.setBegin(antepenult.getBegin());
-        trigram.setEnd(token.getEnd());
-        // add trigram to indexes
-        trigram.addToIndexes();
+        // check whether previous two tokens are from same sentence
+        if (penult.getSentenceId() == token.getSentenceId())
+        {
+          // make a bigram
+          NGram bigram = new NGram(aJCas);
+          bigram.setElementType("Bigram");
+          bigram.setElements(new FSArray(aJCas, 2));
+          // add tokens to bigram
+          bigram.setElements(0,penult);
+          bigram.setElements(1,token);
+          // set bigram begin and end
+          bigram.setBegin(penult.getBegin());
+          bigram.setEnd(token.getEnd());
+          // add bigram to indexes
+          bigram.addToIndexes();
+        }
+        // check whether previous three tokens are from same sentence
+        if (antepenult.getSentenceId() == penult.getSentenceId() &&
+                penult.getSentenceId() == token.getSentenceId())
+        {
+          // make a trigram
+          NGram trigram = new NGram(aJCas);
+          trigram.setElementType("Trigram");
+          trigram.setElements(new FSArray(aJCas, 3));
+          // add tokens to trigram
+          trigram.setElements(0,antepenult);
+          trigram.setElements(1,penult);
+          trigram.setElements(2,token);
+          // set trigram begin and end
+          trigram.setBegin(antepenult.getBegin());
+          trigram.setEnd(token.getEnd());
+          // add trigram to indexes
+          trigram.addToIndexes();
+        }
         // set previous two tokens
         antepenult = penult;
         penult = token;
