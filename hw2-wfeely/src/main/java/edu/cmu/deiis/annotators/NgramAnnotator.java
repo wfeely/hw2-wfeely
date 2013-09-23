@@ -55,6 +55,9 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           // add bigram to indexes
           bigram.addToIndexes();
         }
+        // set previous two tokens
+        antepenult = penult;
+        penult = token;
       }
       else {
         // Case 3: Previous two tokens are set
