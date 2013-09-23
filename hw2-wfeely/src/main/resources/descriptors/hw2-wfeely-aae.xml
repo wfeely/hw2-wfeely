@@ -36,6 +36,9 @@
   <delegateAnalysisEngine key="NgramAnnotator">
       <import name="descriptors.NgramAnnotator"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="AnswerScoreAnnotator">
+      <import name="descriptors.AnswerScoreAnnotator"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-wfeely-aae.xml</name>
@@ -50,6 +53,7 @@
       <node>QuestionAnnotator</node>
         <node>AnswerAnnotator</node>
       <node>NgramAnnotator</node>
+      <node>AnswerScoreAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>
@@ -69,6 +73,7 @@
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
         <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
         </outputs>
         <languagesSupported>
           <language>x-unspecified</language>

@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Sun Sep 22 22:20:53 EDT 2013
- * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
+ * Updated by JCasGen Sun Sep 22 22:57:52 EDT 2013
+ * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/hw2-wfeely-aae.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated
