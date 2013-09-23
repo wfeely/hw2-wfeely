@@ -71,7 +71,7 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
         bigram.addToIndexes();
         // make a trigram
         NGram trigram = new NGram(aJCas);
-        trigram.setElementType("Bigram");
+        trigram.setElementType("Trigram");
         trigram.setElements(new FSArray(aJCas, 3));
         // add tokens to trigram
         trigram.setElements(0,antepenult);
