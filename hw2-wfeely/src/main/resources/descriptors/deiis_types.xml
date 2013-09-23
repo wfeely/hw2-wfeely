@@ -56,6 +56,11 @@
           <description>Integer sentence ID for this ngram.</description>
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>order</name>
+          <description>Integer order of ngram (1 for unigrams, 2 for bigrams, 3 for trigrams).</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
@@ -69,9 +74,21 @@
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
         </featureDescription>
       <featureDescription>
-          <name>ngrams</name>
-          <description>List of ngrams for this answer.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <name>unigrams</name>
+          <description>Array of unigrams for this answer.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.NGram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>bigrams</name>
+          <description>Array of bigrams for this answer.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.NGram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>trigrams</name>
+          <description>Array of trigrams for this answer.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>edu.cmu.deiis.types.NGram</elementType>
         </featureDescription>
       </features>
@@ -82,9 +99,21 @@
       <supertypeName>edu.cmu.deiis.types.Annotation</supertypeName>
     <features>
         <featureDescription>
-          <name>ngrams</name>
-          <description>List of ngrams for this question.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <name>unigrams</name>
+          <description>Array of unigrams for this question.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.NGram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>bigrams</name>
+          <description>Array of bigrams for this question.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.NGram</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>trigrams</name>
+          <description>Array of trigrams for this question.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>edu.cmu.deiis.types.NGram</elementType>
         </featureDescription>
       </features>

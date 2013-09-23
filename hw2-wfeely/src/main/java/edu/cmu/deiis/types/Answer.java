@@ -9,11 +9,14 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 
+import org.apache.uima.jcas.cas.FSArray;
+
+
 import org.apache.uima.jcas.cas.FSList;
 
 
 /** 
- * Updated by JCasGen Sun Sep 22 23:05:29 EDT 2013
+ * Updated by JCasGen Mon Sep 23 00:02:41 EDT 2013
  * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Answer extends Annotation {
@@ -83,21 +86,105 @@ public class Answer extends Annotation {
    
     
   //*--------------*
-  //* Feature: ngrams
+  //* Feature: unigrams
 
-  /** getter for ngrams - gets List of ngrams for this answer.
+  /** getter for unigrams - gets Array of unigrams for this answer.
    * @generated */
-  public FSList getNgrams() {
-    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_ngrams == null)
-      jcasType.jcas.throwFeatMissing("ngrams", "edu.cmu.deiis.types.Answer");
-    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_ngrams)));}
+  public FSArray getUnigrams() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_unigrams == null)
+      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.deiis.types.Answer");
+    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_unigrams)));}
     
-  /** setter for ngrams - sets List of ngrams for this answer. 
+  /** setter for unigrams - sets Array of unigrams for this answer. 
    * @generated */
-  public void setNgrams(FSList v) {
-    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_ngrams == null)
-      jcasType.jcas.throwFeatMissing("ngrams", "edu.cmu.deiis.types.Answer");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_ngrams, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setUnigrams(FSArray v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_unigrams == null)
+      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_unigrams, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for unigrams - gets an indexed value - Array of unigrams for this answer.
+   * @generated */
+  public NGram getUnigrams(int i) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_unigrams == null)
+      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_unigrams), i);
+    return (NGram)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_unigrams), i)));}
+
+  /** indexed setter for unigrams - sets an indexed value - Array of unigrams for this answer.
+   * @generated */
+  public void setUnigrams(int i, NGram v) { 
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_unigrams == null)
+      jcasType.jcas.throwFeatMissing("unigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_unigrams), i);
+    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_unigrams), i, jcasType.ll_cas.ll_getFSRef(v));}
+   
+    
+  //*--------------*
+  //* Feature: bigrams
+
+  /** getter for bigrams - gets Array of bigrams for this answer.
+   * @generated */
+  public FSArray getBigrams() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_bigrams == null)
+      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.deiis.types.Answer");
+    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_bigrams)));}
+    
+  /** setter for bigrams - sets Array of bigrams for this answer. 
+   * @generated */
+  public void setBigrams(FSArray v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_bigrams == null)
+      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_bigrams, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for bigrams - gets an indexed value - Array of bigrams for this answer.
+   * @generated */
+  public NGram getBigrams(int i) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_bigrams == null)
+      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_bigrams), i);
+    return (NGram)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_bigrams), i)));}
+
+  /** indexed setter for bigrams - sets an indexed value - Array of bigrams for this answer.
+   * @generated */
+  public void setBigrams(int i, NGram v) { 
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_bigrams == null)
+      jcasType.jcas.throwFeatMissing("bigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_bigrams), i);
+    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_bigrams), i, jcasType.ll_cas.ll_getFSRef(v));}
+   
+    
+  //*--------------*
+  //* Feature: trigrams
+
+  /** getter for trigrams - gets Array of trigrams for this answer.
+   * @generated */
+  public FSArray getTrigrams() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_trigrams == null)
+      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.deiis.types.Answer");
+    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams)));}
+    
+  /** setter for trigrams - sets Array of trigrams for this answer. 
+   * @generated */
+  public void setTrigrams(FSArray v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_trigrams == null)
+      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for trigrams - gets an indexed value - Array of trigrams for this answer.
+   * @generated */
+  public NGram getTrigrams(int i) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_trigrams == null)
+      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams), i);
+    return (NGram)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams), i)));}
+
+  /** indexed setter for trigrams - sets an indexed value - Array of trigrams for this answer.
+   * @generated */
+  public void setTrigrams(int i, NGram v) { 
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_trigrams == null)
+      jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams), i);
+    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams), i, jcasType.ll_cas.ll_getFSRef(v));}
   }
 
     

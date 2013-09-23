@@ -44,6 +44,7 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
         {
           // make a bigram
           NGram bigram = new NGram(aJCas);
+          bigram.setOrder(2);
           bigram.setElementType("Token");
           bigram.setElements(new FSArray(aJCas, 2));
           // add tokens to bigram
@@ -67,6 +68,7 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
         {
           // make a bigram
           NGram bigram = new NGram(aJCas);
+          bigram.setOrder(2);
           bigram.setElementType("Token");
           bigram.setElements(new FSArray(aJCas, 2));
           // add tokens to bigram
@@ -85,6 +87,7 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
         {
           // make a trigram
           NGram trigram = new NGram(aJCas);
+          trigram.setOrder(3);
           trigram.setElementType("Token");
           trigram.setElements(new FSArray(aJCas, 3));
           // add tokens to trigram
@@ -104,6 +107,7 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
       }
       // set up a unigram
       NGram unigram = new NGram(aJCas);
+      unigram.setOrder(1);
       unigram.setElementType("Token");
       unigram.setElements(new FSArray(aJCas, 1));
       // add token to unigram

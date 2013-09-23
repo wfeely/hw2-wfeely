@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Sun Sep 22 23:05:29 EDT 2013
+ * Updated by JCasGen Mon Sep 23 00:02:41 EDT 2013
  * @generated */
 public class NGram_Type extends Annotation_Type {
   /** @generated */
@@ -115,6 +115,24 @@ public class NGram_Type extends Annotation_Type {
     ll_cas.ll_setIntValue(addr, casFeatCode_sentenceId, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_order;
+  /** @generated */
+  final int     casFeatCode_order;
+  /** @generated */ 
+  public int getOrder(int addr) {
+        if (featOkTst && casFeat_order == null)
+      jcas.throwFeatMissing("order", "edu.cmu.deiis.types.NGram");
+    return ll_cas.ll_getIntValue(addr, casFeatCode_order);
+  }
+  /** @generated */    
+  public void setOrder(int addr, int v) {
+        if (featOkTst && casFeat_order == null)
+      jcas.throwFeatMissing("order", "edu.cmu.deiis.types.NGram");
+    ll_cas.ll_setIntValue(addr, casFeatCode_order, v);}
+    
+  
 
 
 
@@ -135,6 +153,10 @@ public class NGram_Type extends Annotation_Type {
  
     casFeat_sentenceId = jcas.getRequiredFeatureDE(casType, "sentenceId", "uima.cas.Integer", featOkTst);
     casFeatCode_sentenceId  = (null == casFeat_sentenceId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceId).getCode();
+
+ 
+    casFeat_order = jcas.getRequiredFeatureDE(casType, "order", "uima.cas.Integer", featOkTst);
+    casFeatCode_order  = (null == casFeat_order) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_order).getCode();
 
   }
 }

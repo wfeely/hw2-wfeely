@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Sun Sep 22 23:05:29 EDT 2013
+ * Updated by JCasGen Mon Sep 23 00:02:41 EDT 2013
  * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class NGram extends Annotation {
@@ -130,6 +130,24 @@ public class NGram extends Annotation {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_sentenceId == null)
       jcasType.jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.NGram");
     jcasType.ll_cas.ll_setIntValue(addr, ((NGram_Type)jcasType).casFeatCode_sentenceId, v);}    
+   
+    
+  //*--------------*
+  //* Feature: order
+
+  /** getter for order - gets Integer order of ngram (1 for unigrams, 2 for bigrams, 3 for trigrams).
+   * @generated */
+  public int getOrder() {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_order == null)
+      jcasType.jcas.throwFeatMissing("order", "edu.cmu.deiis.types.NGram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((NGram_Type)jcasType).casFeatCode_order);}
+    
+  /** setter for order - sets Integer order of ngram (1 for unigrams, 2 for bigrams, 3 for trigrams). 
+   * @generated */
+  public void setOrder(int v) {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_order == null)
+      jcasType.jcas.throwFeatMissing("order", "edu.cmu.deiis.types.NGram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((NGram_Type)jcasType).casFeatCode_order, v);}    
   }
 
     
