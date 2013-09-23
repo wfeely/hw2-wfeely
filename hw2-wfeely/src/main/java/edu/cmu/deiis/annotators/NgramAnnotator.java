@@ -49,9 +49,10 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           // add tokens to bigram
           bigram.setElements(0,penult);
           bigram.setElements(1,token);
-          // set bigram begin and end
+          // set bigram begin, end, and sentenceId
           bigram.setBegin(penult.getBegin());
           bigram.setEnd(token.getEnd());
+          bigram.setSentenceId(token.getSentenceId());
           // add bigram to indexes
           bigram.addToIndexes();
         }
@@ -71,9 +72,10 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           // add tokens to bigram
           bigram.setElements(0,penult);
           bigram.setElements(1,token);
-          // set bigram begin and end
+          // set bigram begin, end, and sentence ID
           bigram.setBegin(penult.getBegin());
           bigram.setEnd(token.getEnd());
+          bigram.setSentenceId(token.getSentenceId());
           // add bigram to indexes
           bigram.addToIndexes();
         }
@@ -89,9 +91,10 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           trigram.setElements(0,antepenult);
           trigram.setElements(1,penult);
           trigram.setElements(2,token);
-          // set trigram begin and end
+          // set trigram begin, end, and sentence ID
           trigram.setBegin(antepenult.getBegin());
           trigram.setEnd(token.getEnd());
+          trigram.setSentenceId(token.getSentenceId());
           // add trigram to indexes
           trigram.addToIndexes();
         }
@@ -105,9 +108,10 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
       unigram.setElements(new FSArray(aJCas, 1));
       // add token to unigram
       unigram.setElements(0,token);
-      // set unigram begin and end
+      // set unigram begin, end, and sentence ID
       unigram.setBegin(token.getBegin());
       unigram.setEnd(token.getEnd());
+      unigram.setSentenceId(token.getSentenceId());
       // add unigram to indexes
       unigram.addToIndexes();
     }
