@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <name>deiis_types</name>
   <description/>
   <version>1.0</version>
@@ -25,6 +27,13 @@
       <name>edu.cmu.deiis.types.Token</name>
       <description/>
       <supertypeName>edu.cmu.deiis.types.Annotation</supertypeName>
+    <features>
+        <featureDescription>
+          <name>sentenceId</name>
+          <description/>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+      </features>
     </typeDescription>
     <typeDescription>
       <name>edu.cmu.deiis.types.NGram</name>

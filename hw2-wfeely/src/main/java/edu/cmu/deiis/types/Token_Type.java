@@ -10,8 +10,11 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
+import org.apache.uima.cas.impl.FeatureImpl;
+import org.apache.uima.cas.Feature;
+
 /** 
- * Updated by JCasGen Fri Sep 20 12:15:25 EDT 2013
+ * Updated by JCasGen Sun Sep 22 22:20:53 EDT 2013
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */
@@ -43,11 +46,35 @@ public class Token_Type extends Annotation_Type {
 
 
 
+  /** @generated */
+  final Feature casFeat_sentenceId;
+  /** @generated */
+  final int     casFeatCode_sentenceId;
+  /** @generated */ 
+  public int getSentenceId(int addr) {
+        if (featOkTst && casFeat_sentenceId == null)
+      jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.Token");
+    return ll_cas.ll_getIntValue(addr, casFeatCode_sentenceId);
+  }
+  /** @generated */    
+  public void setSentenceId(int addr, int v) {
+        if (featOkTst && casFeat_sentenceId == null)
+      jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.Token");
+    ll_cas.ll_setIntValue(addr, casFeatCode_sentenceId, v);}
+    
+  
+
+
+
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
   public Token_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
+
+ 
+    casFeat_sentenceId = jcas.getRequiredFeatureDE(casType, "sentenceId", "uima.cas.Integer", featOkTst);
+    casFeatCode_sentenceId  = (null == casFeat_sentenceId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceId).getCode();
 
   }
 }
