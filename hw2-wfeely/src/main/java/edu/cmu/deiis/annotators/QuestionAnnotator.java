@@ -1,3 +1,7 @@
+/** QuestionAnnotator.java
+ * @author Weston Feely
+ */
+
 package edu.cmu.deiis.annotators;
 
 import java.util.regex.Matcher;
