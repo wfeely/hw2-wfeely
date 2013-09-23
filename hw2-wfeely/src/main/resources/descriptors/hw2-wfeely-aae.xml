@@ -50,9 +50,9 @@
     <flowConstraints>
       <fixedFlow>
         <node>TokenAnnotator</node>
-      <node>QuestionAnnotator</node>
-        <node>AnswerAnnotator</node>
       <node>NgramAnnotator</node>
+        <node>QuestionAnnotator</node>
+      <node>AnswerAnnotator</node>
       <node>AnswerScoreAnnotator</node>
       </fixedFlow>
     </flowConstraints>
