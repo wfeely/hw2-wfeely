@@ -21,12 +21,9 @@ import edu.cmu.deiis.types.*;
  */
 public class AnswerAnnotator extends JCasAnnotator_ImplBase {
   // answer regex; matches answer strings
-  private Pattern answerPattern =
-           Pattern.compile("A [01] [A-Za-z ']+");
-  // key regex; matches boolean answer key in answer string
-  private Pattern keyPattern =
-           Pattern.compile("A ([01])");
-  public void process (JCas aJCas) {
+  private Pattern answerPattern = Pattern.compile("A [01] [A-Za-z ']+");
+
+  public void process(JCas aJCas) {
     // get document text
     String text = aJCas.getDocumentText();
     // search for answers
@@ -39,15 +36,13 @@ public class AnswerAnnotator extends JCasAnnotator_ImplBase {
       Answer answer = new Answer(aJCas);
       answer.setBegin(matcher.start());
       answer.setEnd(matcher.end());
+      answer.setCoveredText(text.substring(answer.getBegin() + 4, answer.getEnd()+1));
       // get number of words in answer string (-2 for "A" and "0/1")
       int numWords = matcher.group().split(" ").length - 2;
-      // search for answer key
-      Matcher matchkey = keyPattern.matcher(answer.getCoveredText());
+      // get answer key
       boolean key = false;
-      if (matchkey.find()) {
-        if (matchkey.group(1).equals("1"))
-          key = true;
-      }
+      if (text.charAt(answer.getBegin()+2) == '1')
+        key = true;
       // add answer key to answer
       answer.setIsCorrect(key);
       // add ngrams to answer
@@ -65,19 +60,17 @@ public class AnswerAnnotator extends JCasAnnotator_ImplBase {
         // grab an ngram
         NGram ngram = (NGram) ngramIter.next();
         // check if ngram sentence ID matches current answer counter
-        if (ngram.getSentenceId() == i){
+        if (ngram.getSentenceId() == i) {
           // check order of ngram
           if (ngram.getOrder() == 1) {
             // add unigram to unigrams
             answer.setUnigrams(numUni, ngram);
             numUni++;
-          }
-          else if (ngram.getOrder() == 2) {
+          } else if (ngram.getOrder() == 2) {
             // add bigram to bigrams
             answer.setBigrams(numBi, ngram);
             numBi++;
-          }
-          else {
+          } else {
             // add trigram to trigrams
             answer.setTrigrams(numTri, ngram);
             numTri++;

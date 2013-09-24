@@ -39,6 +39,9 @@
   <delegateAnalysisEngine key="AnswerScoreAnnotator">
       <import name="descriptors.AnswerScoreAnnotator"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="EvalAnnotator">
+      <import name="descriptors.EvalAnnotator"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-wfeely-aae.xml</name>
@@ -54,6 +57,7 @@
         <node>QuestionAnnotator</node>
       <node>AnswerAnnotator</node>
       <node>AnswerScoreAnnotator</node>
+      <node>EvalAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>

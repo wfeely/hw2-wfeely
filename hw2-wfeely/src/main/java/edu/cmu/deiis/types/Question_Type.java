@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Mon Sep 23 22:05:18 EDT 2013
+ * Updated by JCasGen Mon Sep 23 22:34:46 EDT 2013
  * @generated */
 public class Question_Type extends Annotation_Type {
   /** @generated */
@@ -156,6 +156,24 @@ public class Question_Type extends Annotation_Type {
     ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_trigrams), i, v);
   }
  
+ 
+  /** @generated */
+  final Feature casFeat_coveredText;
+  /** @generated */
+  final int     casFeatCode_coveredText;
+  /** @generated */ 
+  public String getCoveredText(int addr) {
+        if (featOkTst && casFeat_coveredText == null)
+      jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Question");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_coveredText);
+  }
+  /** @generated */    
+  public void setCoveredText(int addr, String v) {
+        if (featOkTst && casFeat_coveredText == null)
+      jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Question");
+    ll_cas.ll_setStringValue(addr, casFeatCode_coveredText, v);}
+    
+  
 
 
 
@@ -176,6 +194,10 @@ public class Question_Type extends Annotation_Type {
  
     casFeat_trigrams = jcas.getRequiredFeatureDE(casType, "trigrams", "uima.cas.FSArray", featOkTst);
     casFeatCode_trigrams  = (null == casFeat_trigrams) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_trigrams).getCode();
+
+ 
+    casFeat_coveredText = jcas.getRequiredFeatureDE(casType, "coveredText", "uima.cas.String", featOkTst);
+    casFeatCode_coveredText  = (null == casFeat_coveredText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_coveredText).getCode();
 
   }
 }

@@ -16,7 +16,7 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** 
- * Updated by JCasGen Mon Sep 23 22:05:18 EDT 2013
+ * Updated by JCasGen Mon Sep 23 22:34:46 EDT 2013
  * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Answer extends Annotation {
@@ -185,6 +185,24 @@ public class Answer extends Annotation {
       jcasType.jcas.throwFeatMissing("trigrams", "edu.cmu.deiis.types.Answer");
     jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams), i);
     jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_trigrams), i, jcasType.ll_cas.ll_getFSRef(v));}
+   
+    
+  //*--------------*
+  //* Feature: coveredText
+
+  /** getter for coveredText - gets Covered text from document span, for this token.
+   * @generated */
+  public String getCoveredText() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_coveredText == null)
+      jcasType.jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Answer");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Answer_Type)jcasType).casFeatCode_coveredText);}
+    
+  /** setter for coveredText - sets Covered text from document span, for this token. 
+   * @generated */
+  public void setCoveredText(String v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_coveredText == null)
+      jcasType.jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Answer");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Answer_Type)jcasType).casFeatCode_coveredText, v);}    
   }
 
     

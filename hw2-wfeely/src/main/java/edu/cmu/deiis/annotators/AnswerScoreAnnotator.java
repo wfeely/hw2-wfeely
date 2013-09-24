@@ -18,7 +18,7 @@ import edu.cmu.deiis.types.*;
  * Annotator that scores answers by finding shared ngrams between question and answers.
  */
 public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
-  public void process (JCas aJCas) {
+  public void process(JCas aJCas) {
     // get question
     FSIndex questionIndex = aJCas.getAnnotationIndex(Question.type);
     Iterator questionIter = questionIndex.iterator();
@@ -41,62 +41,54 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
       // compute unigram matches
       int numUni = 0;
       int matchUni = 0;
-      for (int i=0; i<question.getUnigrams().size(); i++)
-      {
-          for (int j=0; j<answer.getUnigrams().size(); j++)
-          {
-              NGram qNgram = (NGram) question.getUnigrams().get(i);
-              NGram aNgram = (NGram) answer.getUnigrams().get(j);
-              if(qNgram.getCoveredText().equals(aNgram.getCoveredText()))
-              {
-                // increment matching unigrams count
-                matchUni++;
-              }
+      for (int i = 0; i < question.getUnigrams().size(); i++) {
+        for (int j = 0; j < answer.getUnigrams().size(); j++) {
+          NGram qNgram = (NGram) question.getUnigrams().get(i);
+          NGram aNgram = (NGram) answer.getUnigrams().get(j);
+          if (qNgram.getCoveredText().equals(aNgram.getCoveredText())) {
+            // increment matching unigrams count
+            matchUni++;
           }
-          // increment total unigrams count
-          numUni++;
+        }
+        // increment total unigrams count
+        numUni++;
       }
       // compute bigram matches
       int numBi = 0;
       int matchBi = 0;
-      for (int i=0; i<question.getBigrams().size(); i++)
-      {
-          for (int j=0; j<answer.getBigrams().size(); j++)
-          {
-            NGram qNgram = (NGram) question.getBigrams().get(i);
-            NGram aNgram = (NGram) answer.getBigrams().get(j);
-            if(qNgram.getCoveredText().equals(aNgram.getCoveredText()))
-            {
-                // increment matching bigrams count
-                matchBi++;
-            }
+      for (int i = 0; i < question.getBigrams().size(); i++) {
+        for (int j = 0; j < answer.getBigrams().size(); j++) {
+          NGram qNgram = (NGram) question.getBigrams().get(i);
+          NGram aNgram = (NGram) answer.getBigrams().get(j);
+          if (qNgram.getCoveredText().equals(aNgram.getCoveredText())) {
+            // increment matching bigrams count
+            matchBi++;
           }
-          // increment total bigrams count
-          numBi++;
+        }
+        // increment total bigrams count
+        numBi++;
       }
       // compute trigram match
       int numTri = 0;
       int matchTri = 0;
-      for (int i=0; i<question.getTrigrams().size(); i++)
-      {
-          for (int j=0; j<answer.getTrigrams().size(); j++)
-          {
-            NGram qNgram = (NGram) question.getTrigrams().get(i);
-            NGram aNgram = (NGram) answer.getTrigrams().get(j);
-            if(qNgram.getCoveredText().equals(aNgram.getCoveredText()))
-            {
-                // increment matching trigrams count
-                matchTri++;
-              }
+      for (int i = 0; i < question.getTrigrams().size(); i++) {
+        for (int j = 0; j < answer.getTrigrams().size(); j++) {
+          NGram qNgram = (NGram) question.getTrigrams().get(i);
+          NGram aNgram = (NGram) answer.getTrigrams().get(j);
+          if (qNgram.getCoveredText().equals(aNgram.getCoveredText())) {
+            // increment matching trigrams count
+            matchTri++;
           }
-          // increment total trigrams count
-          numTri++;
+        }
+        // increment total trigrams count
+        numTri++;
       }
       // calculate score
-      score.setScore((((double) matchUni + (double) matchBi + (double) matchTri) / 
-              ((double) numUni + (double) numBi + (double) numTri)));
-      // score.setScore((((double) matchUni / (double) numUni) + ((double) matchBi / (double) numBi) + 
-      //        ((double) matchTri / (double) numTri)) / 3.0);
+      score.setScore((((double) matchUni + (double) matchBi + (double) matchTri) / ((double) numUni
+              + (double) numBi + (double) numTri)));
+      // score.setScore((((double) matchUni / (double) numUni) + ((double) matchBi / (double) numBi)
+      // +
+      // ((double) matchTri / (double) numTri)) / 3.0);
       // add score to indexes and iterate
       score.addToIndexes();
     }

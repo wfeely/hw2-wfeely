@@ -16,28 +16,27 @@ import edu.cmu.deiis.types.*;
  */
 public class TokenAnnotator extends JCasAnnotator_ImplBase {
   // token regex; matches alphanumeric strings
-  private Pattern tokenPattern =
-           Pattern.compile("[A-Za-z0-9']+");
-  public void process (JCas aJCas) {
+  private Pattern tokenPattern = Pattern.compile("[A-Za-z0-9']+");
+
+  public void process(JCas aJCas) {
     // get document text
     String text = aJCas.getDocumentText();
     // split document text into sentences
-    String [] sentences = text.split("\\n");
+    String[] sentences = text.split("\\n");
     // maintain position in document for annotations, as int
     int docpos = 0;
-    for (int i=0; i<sentences.length; i++) {
+    for (int i = 0; i < sentences.length; i++) {
       // grab next sentence
       String sentence = sentences[i];
       // skip Q/A and 0/1 in beginning of sentence
       String sentenceText;
       // Check whether sentence is question or answer
-      if (sentence.substring(0, 1).equals("Q")){
+      if (sentence.substring(0, 1).equals("Q")) {
         // Case 1: question; start sentenceText 2 chars in
         sentenceText = sentence.substring(2);
         // update position in document
         docpos += 2;
-      }
-      else {
+      } else {
         // Case 2: answer; start sentenceText 4 chars in
         sentenceText = sentence.substring(4);
         // update position in document
