@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Mon Sep 23 20:32:03 EDT 2013
+ * Updated by JCasGen Mon Sep 23 22:05:18 EDT 2013
  * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class AnswerScore extends Annotation {

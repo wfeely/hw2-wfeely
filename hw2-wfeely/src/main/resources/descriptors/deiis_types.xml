@@ -145,5 +145,23 @@
         </featureDescription>
       </features>
     </typeDescription>
+  <typeDescription>
+      <name>edu.cmu.deiis.types.Eval</name>
+      <description>Evaluation type for ranking of answers and calculating precision @ N.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>precisionAtN</name>
+          <description>Precision @ N.</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>ranking</name>
+          <description>Ranking of AnswerScore objects, for calculating precision @ N.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>edu.cmu.deiis.types.AnswerScore</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
   </types>
 </typeSystemDescription>
