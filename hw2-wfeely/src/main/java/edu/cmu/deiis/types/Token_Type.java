@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Mon Sep 23 00:21:25 EDT 2013
+ * Updated by JCasGen Mon Sep 23 20:32:03 EDT 2013
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */
@@ -63,6 +63,24 @@ public class Token_Type extends Annotation_Type {
     ll_cas.ll_setIntValue(addr, casFeatCode_sentenceId, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_coveredText;
+  /** @generated */
+  final int     casFeatCode_coveredText;
+  /** @generated */ 
+  public String getCoveredText(int addr) {
+        if (featOkTst && casFeat_coveredText == null)
+      jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Token");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_coveredText);
+  }
+  /** @generated */    
+  public void setCoveredText(int addr, String v) {
+        if (featOkTst && casFeat_coveredText == null)
+      jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Token");
+    ll_cas.ll_setStringValue(addr, casFeatCode_coveredText, v);}
+    
+  
 
 
 
@@ -75,6 +93,10 @@ public class Token_Type extends Annotation_Type {
  
     casFeat_sentenceId = jcas.getRequiredFeatureDE(casType, "sentenceId", "uima.cas.Integer", featOkTst);
     casFeatCode_sentenceId  = (null == casFeat_sentenceId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceId).getCode();
+
+ 
+    casFeat_coveredText = jcas.getRequiredFeatureDE(casType, "coveredText", "uima.cas.String", featOkTst);
+    casFeatCode_coveredText  = (null == casFeat_coveredText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_coveredText).getCode();
 
   }
 }

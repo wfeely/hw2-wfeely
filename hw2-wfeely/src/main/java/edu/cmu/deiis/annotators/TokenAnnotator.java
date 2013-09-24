@@ -52,6 +52,7 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
         token.setBegin(docpos + matcher.start());
         token.setEnd(docpos + matcher.end());
         token.setSentenceId(i);
+        token.setCoveredText(text.substring(token.getBegin(), token.getEnd()));
         // add token to indexes and iterate
         token.addToIndexes();
         spos = matcher.end();

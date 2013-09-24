@@ -58,10 +58,11 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           // add tokens to bigram
           bigram.setElements(0,penult);
           bigram.setElements(1,token);
-          // set bigram begin, end, and sentenceId
+          // set bigram begin, end, sentenceId, and coveredText
           bigram.setBegin(penult.getBegin());
           bigram.setEnd(token.getEnd());
           bigram.setSentenceId(token.getSentenceId());
+          bigram.setCoveredText(penult.getCoveredText() + " " + token.getCoveredText());
           // add bigram to indexes
           bigram.addToIndexes();
         }
@@ -82,10 +83,11 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           // add tokens to bigram
           bigram.setElements(0,penult);
           bigram.setElements(1,token);
-          // set bigram begin, end, and sentence ID
+          // set bigram begin, end, sentence ID, and covered text
           bigram.setBegin(penult.getBegin());
           bigram.setEnd(token.getEnd());
           bigram.setSentenceId(token.getSentenceId());
+          bigram.setCoveredText(penult.getCoveredText() + " " + token.getCoveredText());
           // add bigram to indexes
           bigram.addToIndexes();
         }
@@ -102,10 +104,12 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
           trigram.setElements(0,antepenult);
           trigram.setElements(1,penult);
           trigram.setElements(2,token);
-          // set trigram begin, end, and sentence ID
+          // set trigram begin, end, sentence ID, and covered text
           trigram.setBegin(antepenult.getBegin());
           trigram.setEnd(token.getEnd());
           trigram.setSentenceId(token.getSentenceId());
+          trigram.setCoveredText(antepenult.getCoveredText() + " " +
+                  penult.getCoveredText() + " " + token.getCoveredText());
           // add trigram to indexes
           trigram.addToIndexes();
         }
@@ -120,10 +124,11 @@ public class NgramAnnotator extends JCasAnnotator_ImplBase {
       unigram.setElements(new FSArray(aJCas, 1));
       // add token to unigram
       unigram.setElements(0,token);
-      // set unigram begin, end, and sentence ID
+      // set unigram begin, end, sentence ID, and covered text
       unigram.setBegin(token.getBegin());
       unigram.setEnd(token.getEnd());
       unigram.setSentenceId(token.getSentenceId());
+      unigram.setCoveredText(token.getCoveredText());
       // add unigram to indexes
       unigram.addToIndexes();
     }

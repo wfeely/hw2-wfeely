@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Mon Sep 23 00:21:25 EDT 2013
- * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/hw2-wfeely-aae.xml
+ * Updated by JCasGen Mon Sep 23 20:32:03 EDT 2013
+ * XML source: /home/hermes/git/hw2-wfeely/hw2-wfeely/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -75,6 +75,24 @@ public class Token extends Annotation {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_sentenceId == null)
       jcasType.jcas.throwFeatMissing("sentenceId", "edu.cmu.deiis.types.Token");
     jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_sentenceId, v);}    
+   
+    
+  //*--------------*
+  //* Feature: coveredText
+
+  /** getter for coveredText - gets Covered text from document span, for this token.
+   * @generated */
+  public String getCoveredText() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_coveredText == null)
+      jcasType.jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Token");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Token_Type)jcasType).casFeatCode_coveredText);}
+    
+  /** setter for coveredText - sets Covered text from document span, for this token. 
+   * @generated */
+  public void setCoveredText(String v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_coveredText == null)
+      jcasType.jcas.throwFeatMissing("coveredText", "edu.cmu.deiis.types.Token");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Token_Type)jcasType).casFeatCode_coveredText, v);}    
   }
 
     
